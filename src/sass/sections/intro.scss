@@ -2,7 +2,7 @@
     padding-top: 0;
     padding-bottom: 0;
     display: flex;
-    // min-width: 400px;
+    min-width: 320px;
     justify-content: center;
     flex-flow: column nowrap;
     @include media(">desktop") {
@@ -136,7 +136,7 @@
             letter-spacing: 1.7px;
             font-weight: bold;
             width: 358px;
-            @include media("<desktop") {
+            @include media("<tablet") {
                 width: auto;
             }
         }
@@ -208,6 +208,7 @@
      .bottom {
         &#{__article} {
             // margin: 0 0;
+            padding: 10px;
             @include media(">desktop") {
                 &:not(:last-child) {
                     margin-right: 75px;

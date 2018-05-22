@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: 300px;
-    justify-items: center;
+    // justify-items: center;
     // @include media("<tablet") {
     //     grid-template-columns: auto;
     // }
@@ -15,9 +15,10 @@
         grid-template-columns: auto auto auto;
     }
     
-    padding: 10px;
+    // padding: 10px;
     grid-gap: 5px;
     &#{__item} {
+        // padding: 10px;
         text-align: left;
         &#{--high} {
             grid-row-end: span 2;
