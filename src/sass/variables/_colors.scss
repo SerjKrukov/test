@@ -1,0 +1,31 @@
+$green: #59AD89;
+$light-blue: #2195F2;
+$iron: #dadbdf;
+
+$green-primary:#5ABCAF;
+
+$colors: (
+	black:#2e2e2e,
+	grey:#edf4f8,
+	red:#ED1C24,
+	green:#00db8f,
+	theme:#4bb9ea,
+	theme__darken:#1479bf,
+	theme__sub:#e76e33,
+);
+
+$color-shadow: rgba(#000, .125);
+$color-primary: $light-blue;
+$color-accent: $green;
+$color-background: #fff;
+$color-background-shade: $iron;
+$color-background-invert: $light-blue;
+$color-text: #212121;
+$color-text-secondary:	#757575;
+$color-text-strong:	darken($color-text, 40%);
+$color-text-invert:	rgba($color-background, .75);
+$color-text-strong-invert:	$color-background;
+$color-text-link:	$color-primary;
+$color-text-link-visited:	#4592cf;
+$color-text-link-hover:	#1976d2;
+$color-border:	$iron;

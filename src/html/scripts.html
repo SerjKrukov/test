@@ -1,0 +1,127 @@
+<!--================================
+=            INPUT MASK            =
+=================================-->
+
+<script src='js/imask.min.js'></script>
+<script>
+	// 	INFO
+	//	https://unmanner.github.io/imaskjs/#examples
+</script>
+
+<!--====  End of INPUT MASK  ====-->
+
+
+<!--================================
+=            ANIMATIONS            =
+=================================-->
+
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script>
+	// INFO
+	// https://github.com/michalsnik/aos
+
+
+	// AOS.init({
+ //      duration: 400,
+ //      delay: 200,
+ //    });
+</script>
+
+<!--====  End of ANIMATIONS  ====-->
+
+<!--==== Font awesome  ====-->
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+<!--============================
+=            SLIDER            =
+=============================-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+<script>
+	// INFO
+	// http://idangero.us/swiper/api/
+
+
+</script>
+
+<!--====  End of SLIDER  ====-->
+
+
+
+<!--==================================
+=            SENDING FORM            =
+===================================-->
+
+<script async>
+	function sendForm(idName, idPhone, idInfo) {
+		let name = document.getElementById(idName).value;
+		let phone = document.getElementById(idPhone).value;
+		let info = document.getElementById(idInfo).dataset.info;
+		console.log(name, phone,info);
+
+		if(name.length == 0){
+			document.getElementById(idName).classList.add('error');
+		}else{
+			document.getElementById(idName).classList.remove('error');
+		}
+
+		if(phone.length == 0){
+			document.getElementById(idPhone).classList.add('error');
+		}else{
+			document.getElementById(idPhone).classList.remove('error');
+		}
+
+		if(name.length != 0 && phone.length != 0){
+
+			var data = {
+			  name: name,
+			  phone: phone,
+			  info: info
+			};
+
+			var boundary = String(Math.random()).slice(2);
+			var boundaryMiddle = '--' + boundary + '\r\n';
+			var boundaryLast = '--' + boundary + '--\r\n'
+
+			var body = ['\r\n'];
+			for (var key in data) {
+			  // добавление поля
+			  body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + data[key] + '\r\n');
+			}
+
+			body = body.join(boundaryMiddle) + boundaryLast;
+
+			// Тело запроса готово, отправляем
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', '/form.php', true);
+
+			xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
+
+			xhr.onreadystatechange = function() {
+			  	if (this.readyState != 4) return;
+
+			  	document.getElementById(idName).value = "";
+			  	document.getElementById(idPhone).value = "";
+				document.getElementById(idName).classList.remove('error');
+				document.getElementById(idPhone).classList.remove('error');
+				leadPopupEvent.close();
+				document.getElementById('success-block').classList.add('show');
+				setTimeout(function() {
+					document.getElementById('success-block').classList.remove('show');
+				}, 5000);
+
+
+			}
+
+			xhr.send(body);
+		}
+	}	
+
+</script>
+
+<!--====  End of SENDING FORM  ====-->

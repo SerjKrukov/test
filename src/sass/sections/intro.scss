@@ -1,0 +1,229 @@
+.intro {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    // min-width: 400px;
+    justify-content: center;
+    flex-flow: column nowrap;
+    @include media(">desktop") {
+        flex-flow: row nowrap;
+    }
+    @include media("<desktop") {
+        // overflow-x: hidden;
+    }
+    &#{__wrapper} {
+       padding-right: 0;
+       margin: 0;
+       @include media("<desktop") {
+           display: block;
+            padding-left: 0;
+       }
+
+    }
+    &#{__right} {
+        width: 120px;
+        // float: right;
+        display: flex;
+        flex-flow: column wrap;
+        // height: 745px;
+        align-items: center;
+        // margin-left: -20px;
+        position: relative;
+        justify-content: center;
+        @include media("<desktop") {
+            flex-flow: row wrap;
+            width: 100%;
+            height: 70px;
+        }
+    }
+    &#{__navigation} {
+        display: flex;
+        flex-direction: column;
+        height: 216px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        @include media("<desktop") {
+            width: 30%;
+            flex-flow: row nowrap;
+            position: relative;
+            height: inherit;
+        }
+    }
+    &#{__social} {
+        display: flex;
+        height: 255px;
+        justify-content: space-evenly;
+        flex-flow: column wrap;
+        @include media("<desktop") {
+            flex-flow: row nowrap;
+            align-items: center;
+            width: 70%;
+            height: inherit;
+        }
+    }
+    &#{__top} {
+        height: 745px;
+        background: url("../img/satelite-dish.png") no-repeat;
+        background-position: right bottom;
+        background-size: 970px 700px;
+        // background-size: contain;
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        position: relative;
+        transition: all 0.5s;
+        @include media(">tablet-wide", "<desktop") {
+            // width: 1024px;
+          
+        }
+        @include media("<desktop") {
+          padding: 0 20px;
+          background-size: cover;
+          height: auto;
+          padding: {
+              top: 50px;
+              bottom: 50px;
+          }
+        }
+    }
+    &#{__body} {
+        width: 395px;
+        @include media("<desktop") {
+            width: auto;
+        }
+    }
+    &#{__bottom} {
+        margin-left: calc(100% - 950px);
+        margin-top: 40px;
+        display: flex;
+        width: 986px;
+        justify-content: center;
+        flex-flow: row nowrap;
+        @include media("<desktop") {
+            margin: 40px 0 0;
+            width: auto;
+        }
+        @include media("<phone-wide") {
+            flex-flow: column wrap;
+            padding: 10px;
+        }
+        // @include media ("<tablet-wide") {
+        //     flex-flow: column wrap;
+        // }
+        &#{--article} {
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: #787D88;
+            margin-bottom: 30px;
+            font-weight: 300;
+
+        }
+    }
+    &#{__text} {
+        &#{--main} {
+            font-size: 14px;
+            font-weight: 300;
+            max-width: 320px;
+            color: #495256;
+            
+        }
+        &#{--bottom} {
+            color: #1D212C;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: 1.7px;
+            font-weight: bold;
+            width: 358px;
+            @include media("<desktop") {
+                width: auto;
+            }
+        }
+        &#{--light} {
+            font-size: 14px;
+            color: #787D88;
+            width: 104px;
+            @include media("<desktop") {
+                width: auto;
+            }
+        }
+    }
+    &#{__header} {
+        &#{--arcticle} {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: 0;
+            width: 720px;
+            color: #15181F;
+            @include media("<tablet-small") {
+                width: auto;
+                font-size: 40px;
+            }
+        }
+    }
+
+    &#{__btn} {
+        background-color: #5ABCAF;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        width: 226px;
+        height: 56px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 56px;
+        text-align: center;
+        background-color: $green-primary;
+        color: white;
+        &:hover {
+            background-color: darken(#5ABCAF, 10%)
+        }
+        &#{--dark} {
+            background-color: black; 
+        }
+    
+    }
+    &#{__more} {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        width: 72px;
+        height: 72px;
+        line-height: 72px;
+        text-align: center;
+        padding: 7px;
+        }
+
+
+
+     .bottom {
+        &#{__article} {
+            // margin: 0 0;
+            @include media(">desktop") {
+                &:not(:last-child) {
+                    margin-right: 75px;
+                }
+            }
+            
+        }
+     }
+    &#{__icon} {
+        &:hover path {
+            fill: #669EFE;
+        }
+        
+    }
+    &#{__arrow} {
+        &:hover path {
+            stroke: #669EFE;
+        }
+        @include media("<desktop") {
+            
+                transform: rotate(-90deg);
+            
+        }
+    }   
+}
+

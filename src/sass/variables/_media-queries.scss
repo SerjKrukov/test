@@ -1,0 +1,34 @@
+// $lg-notebook: 1366px;
+// $md-notebook: 1200px;
+// $sm-notebook: 1024px;
+
+// $lg-tablet:960px;
+// $md-tablet:768px;
+// $sm-tablet:640px;
+
+// $lg-phone:520px;
+// $md-phone:420px;
+// $sm-phone:350px;
+
+
+// $mobile-small:	240px;
+// $mobile-large:	320px;
+// $tablet-small:	480px;
+// $tablet-large:	768px;
+// $screen-small:	1024px;
+// $screen-large:	1280px;
+
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+) !default;
+
+// @media (max-width: $lg-notebook) {
+// }

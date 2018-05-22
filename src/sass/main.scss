@@ -1,0 +1,21 @@
+// Libs
+// @import 'libs/neat/neat';
+// @import 'mixins';
+// @import 'libs/aos/aos'; // animation
+
+// Variables
+@import 'variables/colors';
+@import 'variables/media-queries';
+
+// Functions
+@import 'functions/color';
+@import 'functions/media-queries';
+
+// Basics
+@import 'reset';
+@import 'font';
+@import 'basic';
+
+// Sections
+@import 'sections/intro';
+@import 'sections/article';

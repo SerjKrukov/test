@@ -1,0 +1,32 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul{
+	list-style: none;
+}
+html{
+	// font-family: 'Roboto';
+	font-family: Helvetica, Arial, sans-serif;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+	line-height: 140%;
+	position: relative;
+	font-size: 15px;
+}
+
+button, input{
+	outline: none!important;
+}
+
+//
+
+.gm-style .place-card-large{
+	display: none;
+}
