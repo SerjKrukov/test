@@ -194,6 +194,13 @@
         line-height: 72px;
         text-align: center;
         padding: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include media("<phone") {
+            height: 52px;;
+            width: 52px;
+        }
         }
 
 
