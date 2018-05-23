@@ -1,0 +1,72 @@
+.grid-container {
+    display: grid;
+    grid-gap: 45px 65px;
+    justify-content: center;
+    grid-template-columns: 300px;
+    justify-items: center;
+    // @include media("<tablet") {
+    //     grid-template-columns: auto;
+    // }
+    @include media(">tablet", "<desktop") {
+        // grid-template-columns: 50% 50%;
+        grid-template-columns: 340px 340px;
+        // grid-column-gap: 20%;
+        
+    }
+    @include media(">desktop") {
+        grid-template-columns: auto auto auto;
+        // grid-column-gap: 50px;
+    }
+    
+    // padding: 10px;
+    // grid-gap: 10px;
+    &#{__item} {
+        // padding: 5px;
+        text-align: left;
+        &#{--high} {
+            grid-row-end: span 2;
+            @include media(">tablet-small") {
+                img {
+                    height: 624px;
+                    
+                }
+            }
+            
+        }
+    }
+    &#{__img} {
+        width: 356px;
+        height: 225px;
+        padding-bottom: 12px;
+        // height: 70%;
+        @include media("<phone") {
+            width: 300px;
+        }
+        &#{--primary} {
+            background-color: $green-primary;
+        }
+    }
+    &#{__header} {
+        padding: {
+            top: 12px;
+            bottom: 10px;
+        };
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1.47px;
+        line-height: 32px;
+        color: #1D212C;
+        max-width: 340px;
+        // @include media("<phone") {
+        //     width: 300px;
+        // }
+    }
+    &#{__text} {
+        padding-top: 10px;
+        color: #787D88;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: lighter;
+        
+    }
+}
