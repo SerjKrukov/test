@@ -39,14 +39,22 @@
 =            SLIDER            =
 =============================-->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/js/swiper.min.js"></script>
 
 <script>
-	// INFO
-	// http://idangero.us/swiper/api/
 
-
+	var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 4,
+      spaceBetween: 33,
+	  centeredSlides: true,
+	  initialSlide: 2,
+      pagination: {
+        el: '.swiper-pagination',
+		type: 'bullets',
+	clickable:true,
+      },
+    });
 </script>
 
 <!--====  End of SLIDER  ====-->
@@ -125,3 +133,4 @@
 </script>
 
 <!--====  End of SENDING FORM  ====-->
+<!-- <script src="../js/slider.js"></script> -->
