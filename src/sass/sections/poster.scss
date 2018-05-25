@@ -1,0 +1,137 @@
+.poster {
+    width: 100%;
+    @include media("<phone") {
+        padding: {
+            left: 0;
+            right: 0;
+        }
+    }
+    &#{--wide} {
+        padding: 0;
+        margin: 0;
+    }
+    &#{__header} {
+        margin: 0 auto;
+        padding-bottom: 70px;
+        text-align: center;
+        max-width: 592px;
+        
+    }
+
+    &#{__caption} {
+        line-height: 46px;
+        letter-spacing: 0;
+        font-size: 36px;
+        padding-bottom: 13px;
+        font-weight: 500;
+        color: #262626;
+        &#{--grid} {
+            padding-bottom: 8px;
+        }
+    }
+    &#{__text} {
+        line-height: 29px;
+        letter-spacing: 0;
+        font-size: 19px;
+        color: #878787;
+        &#{--light} {
+            color: #ffffff;
+        }
+    }
+    &#{__grid} {
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        width: 100%;
+        grid-gap: 0;
+        height: 100%;
+        .grid {
+            &#{__item} {
+                &:nth-child(1) {
+                    background-image: url("../img/placeholder0.png");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        &#{--half} {
+            grid-template-columns: auto auto;
+            .grid {
+                &#{__item} {
+                    &:nth-child(1) {
+                        background-image: url("../img/placeholder1.png");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        height: auto;
+                    }
+                    &:nth-child(2) {
+                        background-image: url("../img/placeholder2.png");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        height: auto;
+                    }
+                    &:nth-child(3) {
+                        background-image: url("../img/placeholder3.png");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        height: auto;
+                    }
+                    &:nth-child(4) {
+                        background-image: url("../img/placeholder4.png");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        @include media("<tablet") {
+            grid-template-columns: auto;
+        }
+        &#{--space} {
+            grid-gap: 25px;
+            grid-template-columns: calc(50vw - 25px) calc(50vw - 25px);
+        }
+        &#{--half-spacer} {
+            grid-template-columns: calc(25vw - 25px) calc(25vw - 25px);
+            @include media("<desktop") {
+                grid-template-columns: auto auto;
+            }
+            @include media("<tablet") {
+                grid-template-columns: auto;
+            }
+        }
+        &#{--main} {
+            @include media("<desktop") {
+                grid-template-columns: auto;
+                :first-child{
+                    min-width: 50vw;
+                }
+            }
+        }
+        .grid {
+            &#{__item} {
+                display: flex;
+                width: 100%;
+                position: relative;
+                height: 100%;
+                min-height: 460px;
+                background-position: center;
+                align-items: flex-end;
+                &#{--small} {
+                    min-height: 286px;
+                }
+                
+                
+            }
+    
+        }
+    }
+
+}

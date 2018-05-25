@@ -45,15 +45,34 @@
 <script>
 
 	var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 4,
+      slidesPerView: 5,
       spaceBetween: 33,
 	  centeredSlides: true,
 	  initialSlide: 2,
+	  effect: 'slide',
+	  touchEventsTarget: 'container',
       pagination: {
         el: '.swiper-pagination',
 		type: 'bullets',
 	clickable:true,
       },
+	  breakpoints: {
+		  1650: {
+			slidesPerView: 4
+		  },
+		  1440: {
+			slidesPerView: 3
+		  },
+		  1000: {
+			slidesPerView: 2
+		  },
+		  640: {
+			slidesPerView: 1
+		  }
+		//   400: {
+		// 	// slidesOffsetBefore: 20
+		//   }
+	  }
     });
 </script>
 
