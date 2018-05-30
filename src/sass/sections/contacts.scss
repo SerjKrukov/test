@@ -1,6 +1,13 @@
 .contacts {
     max-width: 980px;
     margin: 0 auto;
+    padding: 0;
+    @include media(">phablet") {
+        padding: {
+            left: 20px;
+            right: 20px;
+        }
+    }
     &#{__header} {
         padding-top: 60px;
         color: #000000;
@@ -18,8 +25,127 @@
         text-align: center;
         margin: 0 auto;
     }
+    &#{__frame} {
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 43px;
+        width: 100%;
+        padding-bottom: 30px;
+        @include media(">tablet-small") {
+            padding: 20px 30px;
+            text-align: left;
+        }
+    }
+    &#{__frame-icon} {
+        @include media(">tablet-small") {
+            vertical-align: top;
+        }
+    }
+    &#{__frame-header} {
+        text-align: center;
+        @include media(">tablet-small") {
+            display: inline-block;
+            text-align: left;
+            padding-left: 30px;
+        }
+    }
+    &#{__frame-caption} {
+        font-weight: bold;
+        font-size: 16px;
+        padding: {
+            top: 20px;
+            bottom: 6px;
+        }
+        color: #FFFFFF;
+        @include media(">tablet-small") {
+            padding-top: 0;
+        }
+    }
+    &#{__frame-text} {
+        font-weight: 500;
+        font-size: 14px;
+        color: #FFFFFF;
+    }
     &#{-flexbox} {
         display: flex;
+        flex-flow: column nowrap;
+        padding-top: 30px;
+        @include media(">tablet-small") {
+            flex-flow: row-reverse nowrap;
+            justify-content: center;
 
+            &#{__item}{
+                &#{--large} {
+                    flex-grow: 2;
+                    align-self: center;
+                }
+            }
+            
+        }
+        
+    }
+    &#{__input} {
+        padding: 11px;
+        border: 1px solid #C4C4C4;
+        width: 100%;
+        height: 100%;
+        resize: none;
+    }
+    .flexbox {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 10px 30px;
+        justify-content: space-between;
+        @include media(">tablet-small") {
+            flex-flow: row nowrap;
+        }
+    }
+    .background {
+        &#{--primary} {
+            background-color: #A6653B;
+        }
+    }
+    .form {
+        &#{__item} {
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            &#{--area} {
+                padding: 10px 30px;
+                height: 90px;
+            }
+            &#{--input} {
+                @include media(">tablet-small") {
+                    display: inline-block;
+                    width: 48%;
+                    // padding-right: 0;
+                }
+            }
+        }
+    }
+    .btn {
+        text-transform: uppercase;
+        width: 147px;
+        height: 40px;
+        margin: 0 auto;
+        text-align: center;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            background-color: darken(#ffffff, 20%);
+        }
+        &:active {
+            background-color: darken(#ffffff, 20%);
+        }
+        &#{--primary} {
+            background-color: #A6653B;
+            color: #FFFFFF;
+            &:hover {
+                background-color: darken(#A6653B, 10%);
+            }
+            &:active {
+                background-color: darken(#A6653B, 20%);
+            }
+        }
     }
 }
